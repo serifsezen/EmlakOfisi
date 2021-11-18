@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Residence>
+@{
+    ViewBag.Title = "ResidenceList";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+}
+
+<h2>Residence List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Number Of Rooms</th>
+        <th>Age Of Residence</th>
+        <th>Square Meter</th>
+        <th>Type Of Residence</th>
+        <th>Agent</th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.ResidenceId</td>
+            <td>@item.NumberOfRooms</td>
+            <td>@item.AgeOfResidence</td>
+            <td>@item.SquareMeter m²</td>
+            <td>@item.TypeOfResidence</td>
+            <td>@item.Agent.AgentUserName</td>
+        </tr>
+    }
+</table>
+
+
+
+

@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Residence
+@{
+    ViewBag.Title = "AddNewResidence";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Add New Residence</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.Label("Number Of Rooms")
+    @Html.TextBoxFor(x => x.NumberOfRooms, new { @class = "form-control" })
+    @Html.Label("Age Of Residence")
+    @Html.TextBoxFor(x => x.AgeOfResidence, new { @class = "form-control" })
+    @Html.Label("Square Meter")
+    @Html.TextBoxFor(x => x.SquareMeter, new { @class = "form-control" })
+    @Html.Label("Type Of Residence")
+    @Html.TextBoxFor(x => x.TypeOfResidence, new { @class = "form-control" })
+    @Html.Label("Agent")
+    @Html.TextBoxFor(x => x.AgentId, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+
+

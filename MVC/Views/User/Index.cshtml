@@ -1,0 +1,99 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Agent>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Agent Profile</h2>
+
+<!DOCTYPE html
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-pane" id="settings">
+                                    @using (Html.BeginForm("UpdateAgentProfile", "User", FormMethod.Post))
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                    <form class="form-horizontal">
+
+                                        <div class="form-group row">
+
+                                            <label for="inputName" class="col-sm-2 col-form-label">Agent Id</label>
+
+                                            <div class="col-sm-10">
+
+                                                <input class="form-control" readonly="readonly" name="AgentId" value="@item.AgentId">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <label for="inputName" class="col-sm-2 col-form-label">User Name</label>
+
+                                            <div class="col-sm-10">
+
+                                                <input class="form-control" name="AgentUserName" value="@item.AgentUserName">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <label for="inputEmail" class="col-sm-2 col-form-label">Name Of The Firm</label>
+
+                                            <div class="col-sm-10">
+
+                                                <input class="form-control" name="NameOfTheFirm" value="@item.NameOfTheFirm">
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group row">
+
+                                            <label for="inputSkills" class="col-sm-2 col-form-label">Password</label>
+
+                                            <div class="col-sm-10">
+
+                                                <input type="text" class="form-control" name="AgentPassword" value="@item.AgentPassword">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+
+                                            <div class="offset-sm-2 col-sm-10">
+
+                                                <button type="submit" class="btn btn-success">Update Profile</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Residence
+@{
+    ViewBag.Title = "UpdateResidence";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Update Residence</h2>
+
+<form class="form-group" method="post">
+    @Html.Label("Residence Id")
+    @Html.TextBoxFor(x => x.ResidenceId, new { @class = "form-control", @readonly = "readonly" })
+    @Html.Label("Number Of Rooms")
+    @Html.TextBoxFor(x => x.NumberOfRooms, new { @class = "form-control" })
+    @Html.Label("Age Of Residence")
+    @Html.TextBoxFor(x => x.AgeOfResidence, new { @class = "form-control" })
+    @Html.Label("Square Meter m²")
+    @Html.TextBoxFor(x => x.SquareMeter, new { @class = "form-control" })
+    @Html.Label("Type Of Residence")
+    @Html.TextBoxFor(x => x.TypeOfResidence, new { @class = "form-control" })
+    @Html.Label("Agent")
+    @Html.TextBoxFor(x => x.Agent.AgentUserName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+</form>

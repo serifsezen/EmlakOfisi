@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.Agent
+@{
+    ViewBag.Title = "AddNewAgent";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @Html.Label("Agent User Name")
+    @Html.TextBoxFor(x => x.AgentUserName, new { @class = "form-control" })
+    @Html.Label("Name Of The Firm")
+    @Html.TextBoxFor(x => x.NameOfTheFirm, new { @class = "form-control" })
+    @Html.Label("Agent Password")
+    @Html.TextBoxFor(x => x.AgentPassword, new { @Value = 123456, @class="form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+
+
+

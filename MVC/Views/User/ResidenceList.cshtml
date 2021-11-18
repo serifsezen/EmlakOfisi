@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Residence>
+@{
+    ViewBag.Title = "ResidenceList";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Residence List</h2>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Number Of Rooms</th>
+        <th>Age Of Residence</th>
+        <th>Square Meter</th>
+        <th>Type Of Residence</th>
+        <th>Agent</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.ResidenceId</td>
+            <td>@item.NumberOfRooms</td>
+            <td>@item.AgeOfResidence</td>
+            <td>@item.SquareMeter m²</td>
+            <td>@item.TypeOfResidence</td>
+            <td>@item.Agent.AgentUserName</td>
+            <td><a href="/User/DeleteResidence/@item.ResidenceId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/User/UpdateResidence/@item.ResidenceId" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/User/AddNewResidence/" class="btn btn-primary">New Residence</a>
